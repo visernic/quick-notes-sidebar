@@ -1,0 +1,50 @@
+/* content/content.css */
+
+/* Floating Panel Style for the Sidebar */
+#quick-notes-sidebar-iframe {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 340px;
+  height: calc(100vh - 20px);
+  background-color: white;
+  
+  /* UPDATED: Set z-index to max value */
+  z-index: 2147483647; 
+  
+  /* 2D Card Design */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  /* Animation */
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(calc(100% + 20px));
+}
+
+#quick-notes-sidebar-iframe.hidden {
+  transform: translateX(calc(100% + 20px));
+}
+
+#quick-notes-sidebar-iframe:not(.hidden) {
+  transform: translateX(0);
+}
+
+
+/* Highlight Save Popup (2D Style) */
+#quick-notes-highlight-popup {
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  cursor: pointer;
+
+  /* UPDATED: Set z-index to max value */
+  z-index: 2147483647;
+
+  border: 1px solid #222;
+  box-shadow: none;
+}

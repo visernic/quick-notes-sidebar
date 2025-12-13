@@ -1,0 +1,232 @@
+/* sidebar/sidebar.css */
+
+/* --- Base --- */
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  margin: 0;
+  background-color: #FFFFFF;
+  border-radius: 8px; 
+  overflow: hidden;
+}
+
+.container {
+  padding: 15px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* --- Header (UPDATED) --- */
+.sidebar-header {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space elements apart */
+  align-items: center; /* Center them vertically */
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.sidebar-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+/* NEW: Close Button Style */
+#close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: 300;
+  color: #888;
+  cursor: pointer;
+  padding: 0 5px;
+  line-height: 1;
+}
+#close-btn:hover {
+  color: #333;
+}
+
+
+/* --- (Rest of the CSS is the same) --- */
+/* --- (Copy all other styles: .add-note-section, .notes-manager, .note-card, etc.) --- */
+
+
+/* --- Editor (Quill.js) --- */
+.add-note-section {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.ql-toolbar.ql-snow {
+  border-radius: 8px 8px 0 0;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background: #f9f9f9;
+}
+/* ... (rest of editor styles) ... */
+.ql-container.ql-snow {
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #ddd;
+}
+#editor {
+  height: 120px; 
+}
+
+#save-note-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  width: 100%;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+  box-shadow: none;
+  transition: background-color 0.2s;
+}
+#save-note-btn:hover {
+  background-color: #43A047;
+}
+
+/* --- Tabs and Search --- */
+.notes-manager {
+  padding: 10px 0;
+}
+.tabs {
+  display: flex;
+}
+.tab-btn {
+  flex: 1;
+  padding: 8px;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.7;
+  font-size: 14px;
+}
+/* ... (rest of tab styles) ... */
+.tab-btn:first-child {
+  border-radius: 8px 0 0 8px;
+}
+.tab-btn:last-child {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+.tab-btn.active {
+  background: #e0e0e0;
+  font-weight: 600;
+  opacity: 1;
+}
+.search-container {
+  margin-top: 10px;
+}
+#search-bar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+/* --- Note Lists --- */
+.tab-content {
+  display: none;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 10px;
+}
+/* ... (rest of note list styles) ... */
+.tab-content.active {
+  display: block;
+}
+.empty-msg {
+  color: #888;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+/* --- Note Card (2D) --- */
+.note-card {
+  background: #FFFFFF;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: none;
+}
+/* ... (rest of note card styles) ... */
+.note-card .note-content {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  word-wrap: break-word;
+}
+.note-card .note-content p { margin: 0 0 5px; }
+.note-card .note-content ol, .note-card .note-content ul { padding-left: 20px; margin: 0 0 5px; }
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+.note-date {
+  font-size: 11px;
+  color: #888;
+}
+.note-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 8px;
+  padding: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.note-actions button:hover {
+  opacity: 1;
+}
+.note-actions button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.note-actions .restore-btn { color: #4CAF50; }
+.note-actions .delete-btn { color: #E53935; }
+
+
+/* --- Footer --- */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+/* ... (rest of footer styles) ... */
+.sidebar-footer a {
+  color: #555;
+  text-decoration: none;
+}
+
+#suggest-feature-link {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+}
+#suggest-feature-link:hover {
+  background-color: #eee;
+}

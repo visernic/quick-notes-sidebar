@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="sidebar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link href="../lib/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="sidebar-header">
+      <h3>Quick Notes</h3>
+      <button id="close-btn" title="Close Sidebar">&times;</button>
+    </header>
+
+    <div class="add-note-section">
+      <div id="toolbar">
+        <button class="ql-bold"></button>
+        <button class="ql-italic"></button>
+        <button class="ql-underline"></button>
+        <button class="ql-list" value="ordered"></button>
+        <button class="ql-list" value="bullet"></button>
+      </div>
+      <div id="editor"></div>
+      <button id="save-note-btn">Save Note</button>
+    </div>
+
+    <div class="notes-manager">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="notes">Notes</button>
+        <button class="tab-btn" data-tab="trash">Trash</button>
+      </div>
+      <div class="search-container">
+        <input type="search" id="search-bar" placeholder="Search notes...">
+      </div>
+    </div>
+
+    <div id="notes-list-container" class="tab-content active" data-content="notes"></div>
+    <div id="trash-list-container" class="tab-content" data-content="trash"></div>
+
+    <footer class="sidebar-footer">
+      <a href="#" id="features-link">Features</a>
+      <a href="https://visernic.com/contact/" target="_blank" id="suggest-feature-link">Suggest Feature</a>
+    </footer>
+  </div>
+
+  <script src="../lib/quill.js"></script>
+  <script src="sidebar.js"></script>
+</body>
+</html>
